@@ -31,8 +31,5 @@ public class TimeBasedKeyValueStoreUsingTreeMap {
              keyVAL=tMap.floorKey(timestamp);
         }
         return tMap.get(keyVAL)!=null?tMap.get(keyVAL):"";
-
-
-
     }
 }
