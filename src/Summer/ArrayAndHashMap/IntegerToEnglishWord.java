@@ -26,11 +26,11 @@ public class IntegerToEnglishWord {
         }
         else if(num<100)
         {
-            result= belowTwenty[num/10]+" "+check(num%10);
+            result= belowTwenty[num/10]+" "+check(num%10);//  98/10:9  98%10:8
         }
         else if(num<1000)
         {
-            result= check(num/100)+" Hundered "+ check(num%100);
+            result= check(num/100)+" Hundered "+ check(num%100);//980/100:9+""+980%100:
         }
         else if(num<1000000)
         {

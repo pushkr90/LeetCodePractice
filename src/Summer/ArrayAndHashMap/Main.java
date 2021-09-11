@@ -1,6 +1,8 @@
 package Summer.ArrayAndHashMap;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
@@ -24,6 +26,16 @@ public class Main {
         BestTimeToBuySellStock buy=new BestTimeToBuySellStock();
         int[] prices=new int[]{7,1,5,3,6,4};
         System.out.println(buy.maxProfit(prices));
+        WordBreak wb=new WordBreak();
+        String s="leetcode";
+        List<String> wordDict=new ArrayList<>();
+        wordDict.add("code");
+        wordDict.add("leet");
+        System.out.println(wb.wordBreak(s,wordDict));
+
+        Permutations pem=new Permutations();
+        int nums1[]=new int[]{1,2,3};
+        System.out.println(pem.permute(nums1));
 
 
     }

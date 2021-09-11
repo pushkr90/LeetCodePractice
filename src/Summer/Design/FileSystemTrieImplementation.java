@@ -4,11 +4,11 @@ import java.util.*;
 
 public class FileSystemTrieImplementation
 {
-    private class FileNode{
+    private class FileNode
+    {
         public Map<String,FileNode> children;
         public Boolean isFile;
         public String fileContent;
-
         public FileNode(boolean isFile)
         {
             this.isFile=isFile;
@@ -22,11 +22,10 @@ public class FileSystemTrieImplementation
     public FileSystemTrieImplementation()
     {
         root=new FileNode(false);
-
-
     }
 
-    public List<String> ls(String path) {
+    public List<String> ls(String path)
+    {
         String[] splitted=path.split("/");
         FileNode temp=root;
         for(int i=1;i<splitted.length;i++)
@@ -87,7 +86,6 @@ public class FileSystemTrieImplementation
             temp=newNode;
         }
         temp.fileContent +=content;
-
     }
 
     public String readContentFromFile(String filePath) {
@@ -102,6 +100,5 @@ public class FileSystemTrieImplementation
             }
         }
         return temp.fileContent;
-
     }
 }

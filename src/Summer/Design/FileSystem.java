@@ -13,7 +13,6 @@ public class FileSystem
         directory.put("/",new HashSet<>());
         file=new HashMap<>();
     }
-
     public List<String> ls(String path)
     {
         String[]splitted=path.split("/");
@@ -87,7 +86,6 @@ public class FileSystem
 
     public String readContentFromFile(String filePath) {
         return file.get(filePath);
-
 
     }
 }

@@ -8,38 +8,33 @@ import java.util.List;
 public class MergeInterval {
     public int[][] merge(int[][] intervals)
     {
-        List<int[]> res=new ArrayList<>();
-
+        List<int[]> ans=new ArrayList<>();
         Arrays.sort(intervals, new Comparator<int[]>() {
             @Override
             public int compare(int[] o1, int[] o2) {
                 return o1[0]-o2[0];
             }
         });
-        int[]startio=intervals[0];
-        int start=startio[0];
-        int end=startio[1];
-        res.add(startio);
+        int[] start=intervals[0];
+        ans.add(start);
 
         for(int i=0;i<intervals.length;i++)
         {
-            int[] nw=intervals[i];
-            int nwstart=nw[0];
-            int newend=nw[1];
-
-            if(nwstart<=startio[1] )
+            int[] inside=intervals[i];
+            if(start[1]>=inside[0])
             {
-                startio[1]=Math.max(startio[1],newend);
-            }
-            else
+                start[1]=Math.max(start[1],inside[1]);
+                start[0]=Math.min(start[0],inside[0]);
+            }else
                 {
-                startio=intervals[i];
-                res.add(startio);
+                    start=inside;
+                    ans.add(start);
             }
 
         }
 
-        return res.toArray(new int[res.size()][]);
+        return ans.toArray(new int[ans.size()][]);
+
 
     }
 }

@@ -60,7 +60,6 @@ class Twitter
                 }
             }
         }
-
         PriorityQueue<Tweet> pq=new PriorityQueue<>(new Comparator<Tweet>() {
             @Override
             public int compare(Tweet o1, Tweet o2) {
