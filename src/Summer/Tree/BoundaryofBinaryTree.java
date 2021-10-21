@@ -2,12 +2,14 @@ package Summer.Tree;
 
 import Summer.Others.TreeNode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BoundaryofBinaryTree {
     public List<Integer> boundaryOfBinaryTree(TreeNode root)
     {
-
+        List<Integer> res = new ArrayList<>();
+        return res;
 
     }
 }

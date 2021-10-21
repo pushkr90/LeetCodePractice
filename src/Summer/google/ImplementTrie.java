@@ -24,7 +24,7 @@ public class ImplementTrie {
             int index=each-'a';
             if(curr.children[index]==null)
             {
-                curr.children=new trie[];
+                curr.children=new trie[26];
             }
             curr=curr.children[index];
         }

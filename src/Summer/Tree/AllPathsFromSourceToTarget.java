@@ -8,7 +8,7 @@ public class AllPathsFromSourceToTarget {
     {
         List<List<Integer>> res=new ArrayList<>();
 
-
+        return res;
 
     }
 }

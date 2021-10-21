@@ -16,10 +16,12 @@ public class KthLargestElementInArray {
                 for(int each:nums)
                 {
                     pq.add(each);
-                    if(pq.size()>k)
-                    {
-                        pq.poll();
-                    }
+
+                }
+
+                for(int i=0;i<k-1;i++)
+                {
+                    pq.poll();
                 }
 
                 return pq.poll();

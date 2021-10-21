@@ -4,26 +4,23 @@ import Summer.Others.TreeNode;
 
 public class CountGoodNodesInBinaryTree
 {
-    private int count=0;
+    private int res;
     public int goodNodes(TreeNode root)
     {
-        if(root==null) return count;
-        dfs(root,root.val);
-        return count;
-
+        res=0;
+        check(root,root.val);
+        return res;
     }
 
-    public void dfs(TreeNode node,int rootVal)
+    private void check(TreeNode curr,int parent)
     {
-        if(node==null)
+        if(curr==null) return;
+        if( parent<=curr.val)
         {
-            return;
+            res++;
         }
-        if(node.val>=rootVal)
-        {
-            count++;
-        }
-        dfs(node.left,node.val);
-        dfs(node.right,node.val);
+        int max=Math.max(curr.val,parent);
+        check(curr.left,max);
+        check(curr.right,max);
     }
 }
